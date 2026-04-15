@@ -35,13 +35,13 @@ export default function Hero() {
             <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 8, repeat: Infinity }}
-                className="absolute top-[-120px] left-[20%] w-[400px] h-[400px] bg-[--color-brand-primary] opacity-20 blur-3xl rounded-full"
+                className="absolute top-[-120px] left-[20%] w-[400px] h-[400px] bg-brand-primary opacity-20 blur-3xl rounded-full"
             />
 
             <motion.div
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 10, repeat: Infinity }}
-                className="absolute bottom-[-120px] right-[20%] w-[400px] h-[400px] bg-[--color-brand-light] opacity-20 blur-3xl rounded-full"
+                className="absolute bottom-[-120px] right-[20%] w-[400px] h-[400px] bg-brand-light opacity-20 blur-3xl rounded-full"
             />
 
             {/* ✨ Content */}
@@ -70,7 +70,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="mt-6 text-lg text-gray-400 dark:text-gray-300 max-w-xl mx-auto"
+                    className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto"
                 >
                     Building scalable, modern, and high-performance digital solutions
                     with cutting-edge technology and innovation.
@@ -86,14 +86,14 @@ export default function Hero() {
                     <motion.button
                         whileHover={{ scale: 1.08 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-6 py-3 rounded-full bg-[--color-brand-primary] text-black font-medium shadow-lg"
+                        className="px-6 py-3 rounded-full bg-brand-primary text-black font-medium shadow-lg"
                     >
                         Get Started
                     </motion.button>
 
                     <motion.button
                         whileHover={{ scale: 1.05 }}
-                        className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition"
+                        className="px-6 py-3 rounded-full border border-gray-300 dark:border-white/20 text-foreground hover:bg-gray-100 dark:hover:bg-white/10 transition"
                     >
                         View Services
                     </motion.button>

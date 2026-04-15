@@ -3,7 +3,7 @@ import Services from "@/components/sections/Services"
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main>
       <Hero />
       <Services />
     </main>

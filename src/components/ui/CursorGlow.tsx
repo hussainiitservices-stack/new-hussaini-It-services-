@@ -27,7 +27,7 @@ export default function CursorGlow() {
                 damping: 20,
                 mass: 0.5,
             }}
-            className="pointer-events-none fixed top-0 left-0 z-40 w-[300px] h-[300px] rounded-full bg-[--color-brand-primary] opacity-20 blur-3xl"
+            className="pointer-events-none fixed top-0 left-0 z-40 w-[300px] h-[300px] rounded-full bg-brand-primary opacity-20 blur-3xl"
         />
     )
 }

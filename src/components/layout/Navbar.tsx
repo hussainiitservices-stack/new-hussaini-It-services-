@@ -62,7 +62,7 @@ export default function Navbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                    ? "bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-lg"
+                    ? "bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 shadow-lg"
                     : "bg-transparent"
                 }`}
         >
@@ -74,7 +74,7 @@ export default function Navbar() {
                     className="flex items-center gap-3 cursor-pointer"
                 >
                     <Image src="/logo.png" alt="Logo" width={40} height={40} />
-                    <span className="text-white font-semibold">Hussaini IT</span>
+                    <span className="text-foreground font-semibold">Hussaini IT</span>
                 </div>
 
                 {/* Desktop Nav */}
@@ -83,9 +83,9 @@ export default function Navbar() {
                         <button
                             key={item.id}
                             onClick={() => handleScrollTo(item.id)}
-                            className={`relative text-sm transition ${active === item.id
-                                    ? "text-white"
-                                    : "text-gray-400 hover:text-white"
+                            className={`relative text-sm transition cursor-pointer ${active === item.id
+                                    ? "text-foreground"
+                                    : "text-gray-500 dark:text-gray-400 hover:text-foreground"
                                 }`}
                         >
                             {item.name}
@@ -93,7 +93,7 @@ export default function Navbar() {
                             {/* 🔥 Smooth underline */}
                             <motion.span
                                 layoutId="underline"
-                                className="absolute left-0 -bottom-1 h-[2px] bg-[--color-brand-primary] w-full"
+                                className="absolute left-0 -bottom-1 h-[2px] bg-brand-primary w-full"
                                 style={{
                                     scaleX: active === item.id ? 1 : 0,
                                     transformOrigin: "left",
@@ -108,7 +108,7 @@ export default function Navbar() {
                 <motion.button
                     whileHover={{ scale: 1.08 }}
                     whileTap={{ scale: 0.95 }}
-                    className="hidden md:block px-5 py-2 rounded-full bg-[--color-brand-primary] text-black font-medium shadow-md"
+                    className="hidden md:block px-5 py-2 rounded-full bg-brand-primary text-black font-medium shadow-md cursor-pointer"
                 >
                     Get Started
                 </motion.button>
@@ -116,7 +116,7 @@ export default function Navbar() {
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setOpen(!open)}
-                    className="md:hidden text-white"
+                    className="md:hidden text-foreground cursor-pointer"
                 >
                     {open ? <X size={28} /> : <Menu size={28} />}
                 </button>
@@ -127,19 +127,19 @@ export default function Navbar() {
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="md:hidden bg-black/95 backdrop-blur-xl px-6 py-6 space-y-4"
+                    className="md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-xl px-6 py-6 space-y-4"
                 >
                     {navItems.map((item) => (
                         <button
                             key={item.id}
                             onClick={() => handleScrollTo(item.id)}
-                            className="block text-gray-300 hover:text-white text-lg text-left w-full"
+                            className="block text-gray-600 dark:text-gray-300 hover:text-foreground text-lg text-left w-full cursor-pointer"
                         >
                             {item.name}
                         </button>
                     ))}
 
-                    <button className="w-full mt-4 px-5 py-3 rounded-full bg-[--color-brand-primary] text-black font-medium">
+                    <button className="w-full mt-4 px-5 py-3 rounded-full bg-brand-primary text-black font-medium cursor-pointer">
                         Get Started
                     </button>
                 </motion.div>

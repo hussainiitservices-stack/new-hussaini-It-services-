@@ -90,9 +90,17 @@
 
 /* Gradient Text */
 .text-gradient {
+  background: linear-gradient(135deg, #2a7ab5, #3a8ec8, #4DA8DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .text-gradient {
   background: linear-gradient(135deg, #4DA8DA, #5BC0EB, #7FD8F7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Smooth theme transition */

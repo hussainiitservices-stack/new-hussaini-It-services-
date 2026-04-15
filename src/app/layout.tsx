@@ -1,47 +1,37 @@
-"use client"
-
 import "./globals.css"
-import { useEffect } from "react"
-import { initLenis } from "@/lib/lenis"
+import type { Metadata } from "next"
+import ClientShell from "@/components/layout/ClientShell"
 
-import Navbar from "@/components/layout/Navbar"
-import CursorGlow from "@/components/ui/CursorGlow"
-import ThemeToggle from "@/components/ui/ThemeToggle"
-import Particles from "@/components/ui/Particles"
+export const metadata: Metadata = {
+    title: "Hussaini IT Services | Modern Digital Solutions",
+    description:
+        "Building scalable, modern, and high-performance digital solutions with cutting-edge technology and innovation. Web development, app development, UI/UX design, and cybersecurity.",
+    keywords: [
+        "IT services",
+        "web development",
+        "app development",
+        "UI/UX design",
+        "cyber security",
+        "Hussaini IT",
+    ],
+    openGraph: {
+        title: "Hussaini IT Services",
+        description:
+            "Building scalable, modern, and high-performance digital solutions.",
+        type: "website",
+    },
+}
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  useEffect(() => {
-    initLenis()
-  }, [])
-
-  return (
-    <html lang="en" className="dark">
-      <body className="bg-background text-foreground antialiased relative overflow-x-hidden">
-
-        {/* 🌌 PARTICLES (bottom layer) */}
-        <div className="fixed inset-0 z-0">
-          <Particles />
-        </div>
-
-        {/* 🖱️ CURSOR GLOW */}
-        <CursorGlow />
-
-        {/* 🌗 THEME TOGGLE */}
-        <ThemeToggle />
-
-        {/* 🧭 NAVBAR */}
-        <Navbar />
-
-        {/* 📦 CONTENT */}
-        <div className="relative z-10">
-          {children}
-        </div>
-
-      </body>
-    </html>
-  )
+    return (
+        <html lang="en" className="dark">
+            <body className="bg-background text-foreground antialiased relative overflow-x-hidden">
+                <ClientShell>{children}</ClientShell>
+            </body>
+        </html>
+    )
 }
